@@ -1,11 +1,10 @@
 import './Home.scss';
 
-function Home() {
+export default function Home() {
   return (
     <div className="Home">
-      
+      oi
     </div>
   );
 }
 
-export default Home;
