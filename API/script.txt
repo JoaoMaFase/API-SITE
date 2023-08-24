@@ -1,0 +1,34 @@
+create database agendaDB;
+
+use agendaDB;
+
+create table tb_agenda (
+	id_agenda			int primary key auto_increment,
+    nm_contato			varchar(200) not null,
+    ds_telefone			varchar(200) not null,
+    ds_email			varchar(200) not null,
+    bt_favorito			boolean not null,
+    dt_cadastro			datetime not null
+);
+
+
+insert into tb_agenda (nm_contato, ds_telefone, ds_email, bt_favorito, dt_cadastro)
+			   values (?, ?, ?, ?, ?);
+
+select * from tb_agenda;
+
+select * from tb_agenda where nm_contato like '% ? %';
+
+select * from tb_agenda where bt_favorito = true;
+
+select * from tb_agenda where dt_cadastro between ? and ?;
+
+update tb_agenda 
+   set nm_contato = ?, 
+       ds_telefone = ?, 
+       ds_email = ?, 
+       bt_favorito = ?, 
+       dt_cadastro = ?
+where id_agenda = ?;
+
+delete from tb_agenda where id_agenda = ?;
